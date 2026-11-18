@@ -4,53 +4,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Spanish Numbers Trainer</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 
 <body>
     <section id="home">
-        <h1>Spanish Numbers Trainer</h1>
+        <header>
+            <h1>Spanish Numbers Trainer</h1>
 
-        <p>Practice writing Spanish numbers as words. For example: 155 → ciento cincuenta y cinco.</p>
+            <p>Practice writing Spanish numbers as words. For example: 155 → ciento cincuenta y cinco.</p>
 
-        <p>Choose the range of numbers, how many questions you want, and a mode.</p>
-        <p>Then press Start — a random number appears and you type its Spanish spelling.</p>
+            <p>Choose the range of numbers, how many questions you want, and a mode.</p>
+            <p>Then press Start — a random number appears and you type its Spanish spelling.</p>
+        </header>
 
-        <label for="range">Number range</label>
-        <select id="range">
-            <option value="100">0 - 100</option>
-            <option value="1000">0 - 1,000</option>
-            <option value="10000">0 - 10,000</option>
-            <option value="100000">0 - 100,000</option>
-            <option value="1000000">0 - 1,000,000</option>
-            <option value="10000000">0 - 10,000,000</option>
-            <option value="100000000">0 - 100,000,000</option>
-            <option value="1000000000">0 - 1,000,000,000</option>
-        </select>
+        <div class="setting">
+            <label for="range">Number range</label>
+            <select id="range">
+                <option value="100">0 - 100</option>
+                <option value="1000">0 - 1,000</option>
+                <option value="10000">0 - 10,000</option>
+                <option value="100000">0 - 100,000</option>
+                <option value="1000000">0 - 1,000,000</option>
+                <option value="10000000">0 - 10,000,000</option>
+                <option value="100000000">0 - 100,000,000</option>
+                <option value="1000000000">0 - 1,000,000,000</option>
+            </select>
+        </div>
 
-        <input type="range" id="question-count" min="5" max="50" value="20" step="5" list="question-count-steps">
-        <datalist id="question-count-steps">
-            <option value="10"></option>
-            <option value="20"></option>
-            <option value="30"></option>
-            <option value="40"></option>
-            <option value="50"></option>
-        </datalist>
+        <div class="setting">
+            <label for="question-count">Questions: <span id="question-count-value">20</span></label>
+            <input type="range" id="question-count" min="5" max="50" value="20" step="5" list="question-count-steps">
+            <datalist id="question-count-steps">
+                <option value="10"></option>
+                <option value="20"></option>
+                <option value="30"></option>
+                <option value="40"></option>
+                <option value="50"></option>
+            </datalist>
+        </div>
 
-        <p>Mode</p>
-        <label>
-            <input type="radio" name="mode" value="test" checked>
-            <strong>Test</strong> — You get each number once. At the end you see
-            your score and the numbers you got wrong.
-        </label>
+        <fieldset>
+            <legend>Mode</legend>
+            <label>
+                <input type="radio" name="mode" value="test" checked>
+                <strong>Test</strong> — You get each number once. At the end you see
+                your score and the numbers you got wrong.
+            </label>
 
-        <label>
-            <input type="radio" name="mode" value="mastery">
-            <strong>Mastery</strong> — Numbers you get wrong come back later in
-            the session, until you've spelled every one correctly.
-        </label>
+            <label>
+                <input type="radio" name="mode" value="mastery">
+                <strong>Mastery</strong> — Numbers you get wrong come back later in
+                the session, until you've spelled every one correctly.
+            </label>
+        </fieldset>
 
         <button id="start-btn">Start</button>
     </section>
